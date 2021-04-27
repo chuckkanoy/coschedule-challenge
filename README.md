@@ -1,1 +1,1 @@
-# coschedule-challenge
+# CoSchedule Challenge
