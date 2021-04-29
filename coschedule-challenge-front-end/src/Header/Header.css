@@ -1,0 +1,58 @@
+li {
+    list-style-type: none;
+    display: inline;
+    padding-left: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.link-bar {
+    background-color: black;
+    text-align: left;
+}
+
+.link-bar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.link-bar a:hover {
+    background-color: #282c34;
+}
+
+.logo {
+    display: inline-block;
+    height: 30px;
+}
+
+.App-header {
+    background-color: #282c34;
+    display: inline-block;
+    min-width: 100vw;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.App-header input{
+    position:absolute;
+    right: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.App-header input{
+    position:absolute;
+    right: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+    outline: none;
+}

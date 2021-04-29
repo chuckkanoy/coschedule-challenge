@@ -1,0 +1,25 @@
+.card img {
+    width: 150px;
+    justify-self: center;
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    background-color: #a8c5ff;
+    display: inline-grid;
+    padding: 20px;
+    margin: 10px;
+    border-width: 2px;
+    border-radius: 8px;
+}
+
+.card:hover {
+    background-color: #d0dffd;
+}
+
+.card a {
+    text-decoration: none;
+    display: grid;
+    justify-content: center;
+}

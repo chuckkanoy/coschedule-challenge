@@ -1,0 +1,9 @@
+.detail {
+    text-align: center;
+    justify-content: center;
+    display: grid;
+}
+
+.detail img{
+    justify-self: center;
+}
