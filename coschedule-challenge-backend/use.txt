@@ -1,0 +1,1 @@
+mongod --dbpath D:/MongoDB/Server/4.4
