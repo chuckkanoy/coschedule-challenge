@@ -2,7 +2,6 @@ import './Card.css';
 import {Link, useHistory, useLocation} from 'react-router-dom';
 
 export default function Card({gif, optionalRating}) {
-    let history = useHistory();
     let location = useLocation();
 
     return (
@@ -10,14 +9,14 @@ export default function Card({gif, optionalRating}) {
             <div className="card">
                 <Link to={`/gif/${gif.id}/rating/${optionalRating}`} >
                     <header>{gif.title}</header>
-                    <img src={gif.images?.preview_gif.url}/>
+                    <img src={gif.images?.preview_gif.url} alt="gif preview"/>
                 </Link>
             </div>
             :
             <div className="card">
                 <Link to={`/gif/${gif.id}`} >
                     <header>{gif.title}</header>
-                    <img src={gif.images?.preview_gif.url}/>
+                    <img src={gif.images?.preview_gif.url} alt="gif preview"/>
                 </Link>
             </div>
     );

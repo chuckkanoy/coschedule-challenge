@@ -37,7 +37,7 @@ function Header({movePageLeft, movePageRight, searchForTerm, user}) {
 
     const searchBar = useLocation().pathname === "/" ?
         <input type="text" placeholder="Search" onChange={searchForTerm}/> :
-        <a></a>;
+        "";
 
     const ratedOption = currentUser?._id ? 
     <li>
@@ -52,7 +52,7 @@ function Header({movePageLeft, movePageRight, searchForTerm, user}) {
                     <ChevronLeft />
                 </IconButton>
                 <a href="https://developers.giphy.com/">
-                    <img className="logo" src={giphylogo}></img>
+                    <img className="logo" src={giphylogo} alt="GIPHY logo"></img>
                 </a>
                 GIF Rater
                 <IconButton className="rightButton" onClick={movePageRight}>
