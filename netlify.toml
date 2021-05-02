@@ -1,6 +1,6 @@
 [build]
     command = "npm run build"
-    publish = "coschedule-challenge-front-end/build"
+    publish = "/build"
     base = "coschedule-challenge-front-end"
 
 [[redirects]]
