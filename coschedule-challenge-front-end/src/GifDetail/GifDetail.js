@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory, useLocation} from 'react-router-dom';
+import { useParams, useHistory} from 'react-router-dom';
 import {getGif, createRating, getComments, createComment, getUser} from './../api';
-import Card from '../Card/Card';
 import './GifDetail.css';
 import StarRatings from 'react-star-ratings';
 import CommentCard from './CommentCard/CommentCard';
@@ -9,7 +8,6 @@ import CommentCard from './CommentCard/CommentCard';
 export default function GifDetail() {
     const [gif, setGif] = useState([]);
     const [comments, setComments] = useState([]);
-    const [makingComment, setMakingComment] = useState(false);
     const [rating, setRating] = useState(0);
     const [modified, setModified] = useState(false);
     const [user, setUser] = useState([]);
@@ -30,7 +28,7 @@ export default function GifDetail() {
         );
 
         ratingParam ? setRating(Number(ratingParam)) : setRating(rating);
-    }, [modified]);
+    }, [modified, id, rating, ratingParam]);
 
     useEffect(() => {
         getUser().then(
@@ -79,7 +77,7 @@ export default function GifDetail() {
             <div>
                 <div className="detail">
                     <h1>{gif.title}</h1>
-                    <img src={gif.images?.original.url} />
+                    <img src={gif.images?.original.url} alt="GIF selected" />
                 </div>
             </div>
             <div className="commentary">

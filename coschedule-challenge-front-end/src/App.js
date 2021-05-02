@@ -1,16 +1,12 @@
-import logo from './logo.svg';
 import React, {useEffect, useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
+  Route
 } from 'react-router-dom';
 import Home from './Home/Home';
 import GifDetail from './GifDetail/GifDetail';
-import {getTrendingGifs, getUser, searchGifs} from './api.js';
+import {getTrendingGifs, searchGifs} from './api.js';
 import Header from './Header/Header';
 import Rated from './Rated/Rated';
 import Login from './Registration/Login';
@@ -23,7 +19,6 @@ function App() {
   const [count, setCount] = useState(0);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
-  const [user, setUser] = useState([]);
 
   useEffect(() => {
     console.log(offset);

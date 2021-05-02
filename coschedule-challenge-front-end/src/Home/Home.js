@@ -1,6 +1,5 @@
 import './Home.css';
-import React, {useEffect, useState} from 'react';
-import {getTrendingGifs} from './../api.js';
+import React from 'react';
 import Card from './../Card/Card';
 
 function Home({gifs}) {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import '../Registration/Registration.css';
 import {Link, useHistory} from 'react-router-dom';
 import { register } from '../api';

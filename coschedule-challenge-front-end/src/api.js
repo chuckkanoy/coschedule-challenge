@@ -4,7 +4,6 @@ import {API_KEY} from './Constants';
 const baseURL = `https://coschedule-challenge-backend.herokuapp.com`;
 let testBaseURL = `http://localhost:3000`;
 testBaseURL = baseURL;
-const url = `https://api.giphy.com/v1/gifs/trending?limit=15&api_key=${API_KEY}`;
 const individualUrl = `https://api.giphy.com/v1/gifs?api_key=${API_KEY}`;
 const options = {
     method: 'GET',

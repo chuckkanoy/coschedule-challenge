@@ -1,6 +1,6 @@
 import { IconButton } from '@material-ui/core';
 import { Delete } from '@material-ui/icons';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { deleteComment } from '../../api';
 import './CommentCard.css';
 
