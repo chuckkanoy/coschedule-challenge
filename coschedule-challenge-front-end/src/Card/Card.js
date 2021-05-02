@@ -1,5 +1,5 @@
 import './Card.css';
-import {Link, useHistory, useLocation} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 export default function Card({gif, optionalRating}) {
     let location = useLocation();
