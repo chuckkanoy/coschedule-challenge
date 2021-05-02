@@ -1,49 +1,106 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
-import {getGif} from './../api';
+import { useParams, useHistory, useLocation} from 'react-router-dom';
+import {getGif, createRating, getComments, createComment, getUser} from './../api';
 import Card from '../Card/Card';
 import './GifDetail.css';
 import StarRatings from 'react-star-ratings';
+import CommentCard from './CommentCard/CommentCard';
 
 export default function GifDetail() {
     const [gif, setGif] = useState([]);
+    const [comments, setComments] = useState([]);
+    const [makingComment, setMakingComment] = useState(false);
     const [rating, setRating] = useState(0);
+    const [modified, setModified] = useState(false);
+    const [user, setUser] = useState([]);
     
-    let {id} = useParams();
+    let {id, ratingParam} = useParams();
+    let history = useHistory();
 
     useEffect(() => {
         getGif(id).then(
           response => {
             setGif(response.data[0]);
-            console.log(response.data[0]);
           }
+        );
+        getComments(id).then(
+            response => {
+                setComments(response);
+            }
+        );
+
+        ratingParam ? setRating(Number(ratingParam)) : setRating(rating);
+    }, [modified]);
+
+    useEffect(() => {
+        getUser().then(
+            response => {
+                response.username ? 
+                    setUser(response) :
+                    setUser([]);
+            }
         )
     }, []);
 
-    const handleSubmit = () => {
-        
+    const changeRating = (newRating) => {
+        if(user._id) {
+            setRating(newRating);
+            createRating(gif.id, newRating);
+        } else {
+            history.push('/login');
+        }
     }
 
-    const changeRating = (newRating) => {
-        setRating(newRating);
+    const addComment = async () => {
+        let comment = document.getElementById('comment').value;
+
+        await createComment(id, comment).then(
+            response => {
+                response.message ? 
+                history.push('/login') : 
+                console.log(response)          
+            }
+        );
+
+        setModified(!modified);
+    }
+
+    const commentForm = () => {
+        return (
+            <div className="commentForm">
+                <textarea id='comment'/>
+                <button onClick={addComment}>Comment!</button>
+            </div>
+        );
     }
 
     return(
-        <div className="detail">
-            <h1>{gif.title}</h1>
-            <img src={gif.images?.original.url} />
-            <StarRatings 
-                rating={rating}
-                changeRating={changeRating}
-                starRatedColor="blue"
-                starHoverColor="blue"
-                numberOfStars={5}
-                name='rating'
-            />
-            {/* <form onSubmit={}>
-                <textarea name="comment"></textarea>
-            </form> */}
-            
+        <div className="detailWrapper">
+            <div>
+                <div className="detail">
+                    <h1>{gif.title}</h1>
+                    <img src={gif.images?.original.url} />
+                </div>
+            </div>
+            <div className="commentary">
+                <div className="stars">
+                    <StarRatings 
+                        rating={rating}
+                        changeRating={changeRating}
+                        starRatedColor="darkgoldenrod"
+                        starHoverColor="gold"
+                        numberOfStars={5}
+                        name='rating'
+                    />
+                </div>
+                {localStorage.getItem('token') ? 
+                    commentForm() :
+                    <p className="notLoggedIn">Please log in to comment on this GIF</p>
+                }
+                {comments.map(comment => 
+                        <CommentCard comment={comment} user={user} setModified={setModified} modified={modified}/>
+                )}
+            </div>
         </div>
     );
 }

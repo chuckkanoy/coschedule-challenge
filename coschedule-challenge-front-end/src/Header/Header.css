@@ -22,7 +22,7 @@ ul {
 }
 
 .link-bar a:hover {
-    background-color: #282c34;
+    text-decoration: underline;
 }
 
 .logo {
@@ -55,4 +55,9 @@ ul {
     margin-top: 10px;
     font-size: 20px;
     outline: none;
+}
+
+.login {
+    position: absolute;
+    right: 5px;
 }

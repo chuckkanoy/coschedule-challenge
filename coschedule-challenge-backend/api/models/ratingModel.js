@@ -3,9 +3,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var RatingSchema = new Schema({
-    gifID: {
-        type: String,
-        required: 'ID of the GIF being rated'
+    gif: {
+        type: Object,
+        required: 'GIF being rated'
+    },
+    user: {
+        type: Object,
+        required: 'user rating GIF'
     },
     createdDate: {
         type: Date,

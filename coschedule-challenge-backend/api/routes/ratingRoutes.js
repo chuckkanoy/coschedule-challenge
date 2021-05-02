@@ -1,17 +1,18 @@
 'use strict';
 module.exports = function(app) {
     var ratings = require('../controllers/ratingController');
+    var auth = require('../middleware/auth');
 
     //ratings Routes
     app.route('/ratings')
         .get(ratings.list_ratings)
-        .post(ratings.create_rating);
+        .post(auth.authorize, ratings.create_rating);
 
-    app.route('/rate/:gif&:rating')
-        .post(ratings.create_rating);
-
-    app.route('/ratings/:ratingId')
+    app.route('/rating')
         .get(ratings.get_rating)
-        .put(ratings.update_rating)
-        .delete(ratings.delete_rating);
+        .put(auth.authorize, ratings.update_rating)
+        .delete(auth.authorize, ratings.delete_rating);
+
+    app.route('/emergency')
+        .delete(auth.authorize, ratings.clear_ratings);
 }

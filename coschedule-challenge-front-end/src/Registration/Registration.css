@@ -1,0 +1,47 @@
+.registrationWrapper {
+    text-align: center;
+}
+
+.registrationFormWrapper {
+    display: inline-block;
+    width: 30%;
+}
+
+.registrationFormWrapper a {
+    color: black;
+    text-decoration: none;
+}
+
+.registrationFormWrapper a:hover {
+    text-decoration: underline;
+}
+
+.registrationForm {
+    background-color: black;
+    display: grid;
+    padding: 20px;
+    align-items: center;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.registrationForm label {
+    color: white;
+}
+
+.registrationForm button {
+    width: 60px;
+}
+
+.buttonBlock {
+    margin-left: 60%;
+}
+
+.buttonBlock button {
+    margin: 2px;
+    margin-top: 10px;
+}
+
+.errors {
+    color: white;
+}

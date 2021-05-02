@@ -6,9 +6,6 @@ module.exports = function(app) {
     app.route('/gifs')
         .get(gifs.list_gifs);
 
-    app.route('/gifs/:search')
-        .get(gifs.search_gifs);
-
-    app.route('/gif/:gifId')
+    app.route('/gif')
         .get(gifs.get_gif);
 }
