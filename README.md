@@ -1,6 +1,7 @@
 # CoSchedule Challenge
 
-This is a project made for the [CoSchedule](https://coschedule.com/) Coding Challenge for part of their application process. It proxies the [GIPHY API](https://developers.giphy.com/) and allows users to view, rate on a scale from 1 to 5, and comment on their favorite (and least favorite) GIFs.
+This is a project made for the [CoSchedule](https://coschedule.com/) Coding Challenge for part of their application process. It proxies the [GIPHY API](https://developers.giphy.com/) and allows users to view, rate on a scale from 1 to 5, and comment on their favorite (and least favorite) GIFs.\
+Hosted at [coschedule-challenge.netlify.app](https://coschedule-challenge.netlify.app/)
 
 ---
 
