@@ -65,9 +65,21 @@ export default function GifDetail() {
 
     const commentForm = () => {
         return (
-            <div className="commentForm">
-                <textarea id='comment'/>
-                <button onClick={addComment}>Comment!</button>
+            <div>
+                <div className="stars">
+                        <StarRatings 
+                            rating={rating}
+                            changeRating={changeRating}
+                            starRatedColor="darkgoldenrod"
+                            starHoverColor="gold"
+                            numberOfStars={5}
+                            name='rating'
+                        />
+                    </div>
+                <div className="commentForm">
+                    <textarea id='comment'/>
+                    <button onClick={addComment}>Comment!</button>
+                </div>
             </div>
         );
     }
@@ -81,16 +93,6 @@ export default function GifDetail() {
                 </div>
             </div>
             <div className="commentary">
-                <div className="stars">
-                    <StarRatings 
-                        rating={rating}
-                        changeRating={changeRating}
-                        starRatedColor="darkgoldenrod"
-                        starHoverColor="gold"
-                        numberOfStars={5}
-                        name='rating'
-                    />
-                </div>
                 {localStorage.getItem('token') ? 
                     commentForm() :
                     <p className="notLoggedIn">Please log in to comment on or rate this GIF</p>
