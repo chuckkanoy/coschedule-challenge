@@ -7,9 +7,9 @@ This is a project made for the [CoSchedule](https://coschedule.com/) Coding Chal
 ## CoSchedule Challenge Backend
 
 Located in the `coschedule-challenge-backend` directory of this repo.
-Built using Express, Mongoose, and Node JS.
-Hosted using Heroku interacting with MongoDB Atlas.
-Features:
+\Built using Express, Mongoose, and Node JS.
+\Hosted using Heroku interacting with MongoDB Atlas.
+\Features:
 
 - Proxying [GIPHY API](https://developers.giphy.com/)
 
@@ -24,9 +24,9 @@ Features:
 ## CoSchedule Challenge Front-End
 
 Located in the `coschedule-challenge-front-end` directory of this repo.
-Built using React JS.
-Hosted using Netlify at [coschedule-challenge.netlify.app](https://coschedule-challenge.netlify.app/)
-Features:
+\Built using React JS.
+\Hosted using Netlify at [coschedule-challenge.netlify.app](https://coschedule-challenge.netlify.app/)
+\Features:
 
 - Listing all GIFs
 
