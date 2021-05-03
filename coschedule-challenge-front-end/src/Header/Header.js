@@ -26,6 +26,7 @@ function Header({movePageLeft, movePageRight, searchForTerm, user}) {
         localStorage.removeItem('token');
         
         history.push('/');
+        window.location.reload();
     }
 
     const login = () => {
