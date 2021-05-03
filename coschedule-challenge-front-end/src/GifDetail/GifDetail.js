@@ -93,7 +93,7 @@ export default function GifDetail() {
                 </div>
                 {localStorage.getItem('token') ? 
                     commentForm() :
-                    <p className="notLoggedIn">Please log in to comment on this GIF</p>
+                    <p className="notLoggedIn">Please log in to comment on or rate this GIF</p>
                 }
                 {comments.map(comment => 
                         <CommentCard comment={comment} user={user} setModified={setModified} modified={modified}/>

@@ -12,7 +12,9 @@ mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost/Gifdb');
 
 const uri = process.env.MONGODB_URI;
-mongoose.connect(uri);
+mongoose.connect(uri,{ dbName: 'GifDB', useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("Connected to GifDB"))
+    .catch(err => console.log(`Could not connect to ${process.env.MONGODB_URI}`, err));
 let cors = require('cors');
 app.use(cors());
 

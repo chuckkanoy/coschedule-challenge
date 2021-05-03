@@ -23,7 +23,6 @@ export default function CommentCard({comment, user, setModified, modified}) {
                 <p>{comment.createdDate}</p>
             </div>
 
-        console.log(comment);
         return user._id ? 
             user.username === comment.user?.username ?
                 <div className="commentCardWrapper">
